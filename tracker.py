@@ -1,10 +1,10 @@
 from stopwatch import Stopwatch
-import pygetwindow
+import pygetwindow as getWindow
 
 
 def track_time_and_window():
 
-  activeWindow = pygetwindow
+  activeWindow = getWindow
 
   timer = Stopwatch()
 
@@ -18,3 +18,4 @@ def track_time_and_window():
   print(time_tracker)
 
 track_time_and_window()
+

@@ -31,3 +31,14 @@ Please note, that all of this will be stored in memory. So, if your program cras
 
 
 I need to measure my elapsed time against the window that's open and add that to time_tracker{}
+
+
+
+while activeWindow.getActiveWinow == true
+  timer = stopwatch()
+  if activeWindow.isMinimized():
+    timer.stop()
+    duration = timer.duration
+    time_tracker[activeWindow.getActiveWindow] = duration
+  
+  print(time_tracker)
