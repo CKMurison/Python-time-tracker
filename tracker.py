@@ -18,4 +18,3 @@ def track_time_and_window():
   print(time_tracker)
 
 track_time_and_window()
-
