@@ -28,3 +28,9 @@ Immediatelly start another timer for the newly active window.
 
 Edit:
 Please note, that all of this will be stored in memory. So, if your program crashes after you have been using it for a while, all of your data for how long a window was active, will be gone. The next step would be to implement functionality that periodically saves this data to a file, in the event that something goes wrong.
+
+
+I need to create a function now which uses start and end time 
+to measure how long time is spent in that window.
+I then need a way to add this to my data {} as key value
+pairs

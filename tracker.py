@@ -2,10 +2,15 @@ import time
 import pygetwindow
 
 
-start_time = time.time()
-time.sleep(5)
-end_time = time.time()
+def track_time_and_window(time_tracker):
 
-elapsed_time = end_time - start_time
+  start_time = time.time()
+  
+  activeWindow = pygetwindow.getActiveWindow()
 
-print(elapsed_time)
+  end_time = time.time()
+
+  elapsed_time = end_time - start_time
+
+  time_tracker = {}
+
