@@ -1,16 +1,20 @@
-import time
+from stopwatch import Stopwatch
 import pygetwindow
 
 
-def track_time_and_window(time_tracker):
+def track_time_and_window():
 
-  start_time = time.time()
-  
-  activeWindow = pygetwindow.getActiveWindow()
+  activeWindow = pygetwindow
 
-  end_time = time.time()
-
-  elapsed_time = end_time - start_time
+  timer = Stopwatch()
 
   time_tracker = {}
 
+  if activeWindow.isMinimized():
+    timer.stop()
+    duration = timer.duration
+    time_tracker[activeWindow.getActiveWindow] = duration
+  
+  print(time_tracker)
+
+track_time_and_window()
