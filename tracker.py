@@ -10,6 +10,10 @@ def track_time_and_window():
 
   time_tracker = {}
 
+  while activeWindow.isMaximised():
+    timer
+    time_tracker[activeWindow.getActiveWindow]
+
   if activeWindow.isMinimized():
     timer.stop()
     duration = timer.duration

@@ -40,3 +40,13 @@ while activeWindow.getActiveWinow == true
     time_tracker[activeWindow.getActiveWindow] = duration
   
   print(time_tracker)
+
+
+
+  while activeWindow.isMaximised:
+    timer
+    time_tracker[activeWindow.getAvtiveWindow]
+
+    if actvewindow.isMaximised == false:
+    time.stop()
+    time_tracker[] = duration
