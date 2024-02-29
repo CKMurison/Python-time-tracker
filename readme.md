@@ -1,52 +1,43 @@
-use this library here --> pygetwindow to obtain the information of the currently active window. For example:
-import pygetwindow
+# Window Activity Tracker
 
-print(pygetwindow.getActiveWindow())
-_____________________________________________
-<Win32Window left="1912", top="-392", width="1096", height="1888", title="tester.py - tester - Visual Studio Code">
-Now, you need a way of measuring time. To do this, you can use the builtin time:
-import time
+This Python script tracks the active application and time spent on each application, with a focus on Google Chrome. It also records the URL of the active tab in Google Chrome.
 
-start_time = time.time()
+## Prerequisites
 
-end_time = time.time()
+- Python 2.x or 3.x
+- macOS environment
+- Required Python packages: `AppKit`, `Foundation`
 
-elapsed_time = end_time - start_time
+## Installation
 
-print(elapsed_time)
+No specific installation steps are required. Just ensure that you have the required Python packages installed.
 
-You need to:
-Create a dictionary which will hold key value pairs. Key for any given active window, and value for the amount of time this window is active.
+## Usage
 
-Create a function that checks which window is active, and stars measuring time. You then have to periodically check if the window is still open by running pygetwindow.getActiveWindow().
+1. Run the script in your terminal
+2. The script continuously monitors the active window and updates the time spent on each application.
+3. If the active window is Google Chrome, it also fetches and logs the URL of the active tab.
 
-If you detect that pygetwindow.getActiveWindow() is returning a different active window from the previous, stop the time, and update the dictionary value for that window.
+## Configuration
 
-Immediatelly start another timer for the newly active window.
+- Adjust the time interval in the `time.sleep()` function to control how often the script checks for changes (default is every 5 seconds).
+- The script saves the tracked data in a file named `window_data.json`.
 
-Edit:
-Please note, that all of this will be stored in memory. So, if your program crashes after you have been using it for a while, all of your data for how long a window was active, will be gone. The next step would be to implement functionality that periodically saves this data to a file, in the event that something goes wrong.
+## Data Format
 
+The recorded data is stored in JSON format in the `window_data.json` file. Each entry includes the application name, time spent, date, and, for Google Chrome, the URL of the active tab.
 
-I need to measure my elapsed time against the window that's open and add that to time_tracker{}
+Example entry:
 
-
-
-while activeWindow.getActiveWinow == true
-  timer = stopwatch()
-  if activeWindow.isMinimized():
-    timer.stop()
-    duration = timer.duration
-    time_tracker[activeWindow.getActiveWindow] = duration
-  
-  print(time_tracker)
-
-
-
-  while activeWindow.isMaximised:
-    timer
-    time_tracker[activeWindow.getAvtiveWindow]
-
-    if actvewindow.isMaximised == false:
-    time.stop()
-    time_tracker[] = duration
+```json
+{
+  "Google Chrome": {
+    "Time Spent": 30,
+    "Date": "2024-02-29 12:34:56",
+    "URL": "https://example.com"
+  },
+  "Other Application": {
+    "Time Spent": 20,
+    "Date": "2024-02-29 12:30:00"
+  }
+}
