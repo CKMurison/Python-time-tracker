@@ -1,5 +1,7 @@
+from __future__ import print_function
 from AppKit import NSWorkspace
 import time
+from Foundation import *
 
 active_window_name = ""
 
@@ -11,11 +13,11 @@ while True:
         print(active_window_name)
     
     if active_window_name == 'Google Chrome':
-        text_of_MyScript = 'tell app "Google Chrome" to get the URL of the active tab of window 1'
-        s = NSAppleScript.initWithSource_(text_of_MyScript)
+        text_of_MyScript = 'tell application "Google Chrome" to get URL of active tab of window 1'
+        s = NSAppleScript.alloc().initWithSource_(text_of_MyScript)
         results, err = s.executeAndReturnError_(None)
         print(results.stringValue())
     
-    time.sleep(1)
+    time.sleep(10)
 
       
